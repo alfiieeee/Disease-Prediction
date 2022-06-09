@@ -6,26 +6,26 @@ from sklearn.ensemble import RandomForestClassifier
         
 st.write("""
 # Weather Prediction in Seattle
-This app predicts the **Weather** type!
+This app predicts the **Weather** type in Seattle!
 """)
 
-st.sidebar.header('User Input Parameters')
+st.sidebar.header('Please select your parameter below!')
 
 def user_input_features():
-    precipitation = st.sidebar.slider('Precipitation', 0.00, 55.90, 27.95)
-    temp_min = st.sidebar.slider('Minimum Temperature', -7.10, 18.30, 5.60)
-    temp_max = st.sidebar.slider('Maximum Temperature', -1.60, 35.60, 17.00)
-    wind = st.sidebar.slider('Wind', 0.40, 9.50, 4.95)
-    data = {'Precipitation': precipitation,
-            'Minimum Temperature': temp_min,
-            'Maximum Temperature': temp_max,
-            'Wind': wind}
+    precipitation = st.sidebar.slider('**Precipitation**', 0.00, 55.90, 27.95)
+    temp_min = st.sidebar.slider('**Minimum Temperature**', -7.10, 18.30, 5.60)
+    temp_max = st.sidebar.slider('**Maximum Temperature**', -1.60, 35.60, 17.00)
+    wind = st.sidebar.slider('**Wind**', 0.40, 9.50, 4.95)
+    data = {'**Precipitation**': precipitation,
+            '**Minimum Temperature**': temp_min,
+            '**Maximum Temperature**': temp_max,
+            '**Wind**': wind}
     features = pd.DataFrame(data, index=[0])
     return features
 
 df = user_input_features()
 
-st.subheader('User Input parameters')
+st.subheader('This is your selected parameter')
 st.write(df)
 
 weather = pd.read_csv("https://raw.githubusercontent.com/alfiieeee/Weather-Prediction/main/seattle-weather.csv")
@@ -38,15 +38,15 @@ classification.fit(X, Y)
 prediction = classification.predict(df)
 prediction_proba = classification.predict_proba(df)
 
-st.subheader('Class labels and their corresponding index number')
+st.subheader('Weather labels and their corresponding index number')
 weather.target_names = ['drizzle','rain','sun', 'snow', 'fog']
 st.table(weather.target_names)
 
-st.subheader('Prediction')
+st.subheader('The prediction of the weather')
 #st.write(weather.target_names[prediction])
 st.write(prediction)
 
-st.subheader('Prediction Probability')
+st.subheader('Probability of weather prediction')
 st.write(prediction_proba)
 
 st.snow()
