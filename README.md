@@ -1,1 +1,1 @@
-# Disease-Prediction
+# Weather Prediction
