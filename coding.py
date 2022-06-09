@@ -12,7 +12,7 @@ This app predicts the **Weather** type!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    precipitation = st.sidebar.slider('Precipitation', 0, 55.9, 27.95)
+    precipitation = st.sidebar.slider('Precipitation', 0.00, 55.9, 27.95)
     temp_min = st.sidebar.slider('Minimum Temperature', -7.1, 18.3, 5.6)
     temp_max = st.sidebar.slider('Maximum Temperature', -1.6, 35.6, 17)
     wind = st.sidebar.slider('Wind', 0.4, 9.5, 4.95)
