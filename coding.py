@@ -12,14 +12,14 @@ This app predicts the **Weather** type!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    Precipitation = st.sidebar.slider('Precipitation', 0, 55.9, 27.95)
-    Tempt_min = st.sidebar.slider('Minimum Temperature', -7.1, 18.3, 5.6)
-    Tempt_max = st.sidebar.slider('Maximum Temperature', -1.6, 35.6, 17)
-    Wind = st.sidebar.slider('Wind', 0.4, 9.5, 4.95)
-    data = {'Precipitation': Precipitation,
-            'Minimum Temperature': Tempt_min,
-            'Maximum Temperature': Tempt_max,
-            'Wind': Wind}
+    precipitation = st.sidebar.slider('Precipitation', 0, 55.9, 27.95)
+    tempt_min = st.sidebar.slider('Minimum Temperature', -7.1, 18.3, 5.6)
+    tempt_max = st.sidebar.slider('Maximum Temperature', -1.6, 35.6, 17)
+    wind = st.sidebar.slider('Wind', 0.4, 9.5, 4.95)
+    data = {'Precipitation': precipitation,
+            'Minimum Temperature': tempt_min,
+            'Maximum Temperature': tempt_max,
+            'Wind': wind}
     features = pd.DataFrame(data, index=[0])
     return features
 
