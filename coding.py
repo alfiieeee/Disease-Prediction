@@ -16,10 +16,10 @@ def user_input_features():
     temp_min = st.sidebar.slider('**Minimum Temperature**', -7.10, 18.30, 5.60)
     temp_max = st.sidebar.slider('**Maximum Temperature**', -1.60, 35.60, 17.00)
     wind = st.sidebar.slider('**Wind**', 0.40, 9.50, 4.95)
-    data = {'**Precipitation**': precipitation,
-            '**Minimum Temperature**': temp_min,
-            '**Maximum Temperature**': temp_max,
-            '**Wind**': wind}
+    data = {'Precipitation': precipitation,
+            'Minimum Temperature': temp_min,
+            'Maximum Temperature': temp_max,
+            'Wind': wind}
     features = pd.DataFrame(data, index=[0])
     return features
 
