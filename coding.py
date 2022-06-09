@@ -26,7 +26,7 @@ def user_input_features():
 df = user_input_features()
 
 st.subheader('This is your selected parameter')
-st.write(**df**)
+st.write(df)
 
 weather = pd.read_csv("https://raw.githubusercontent.com/alfiieeee/Weather-Prediction/main/seattle-weather.csv")
 X = weather.drop('weather', axis = 1)
