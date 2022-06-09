@@ -53,4 +53,8 @@ st.write(prediction)
 st.subheader('Probability of weather prediction')
 st.write(prediction_proba)
 
+checkbox = st.checkbox ('Please click here if you done exploring this web app.')
+if checkbox:
+    st.write ('The datasets used were taken from https://www.kaggle.com/datasets/ananthr1/weather-prediction')
+    
 st.snow()
