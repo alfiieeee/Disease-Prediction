@@ -5,21 +5,21 @@ from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
 
 st.write("""
-# Simple Iris Flower Prediction App
-This app predicts the **Iris flower** type!
+# Weather Prediction in Seattle
+This app predicts the **Weather** type!
 """)
 
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    sepal_length = st.sidebar.slider('Sepal length', 4.3, 7.9, 5.4)
-    sepal_width = st.sidebar.slider('Sepal width', 2.0, 4.4, 3.4)
-    petal_length = st.sidebar.slider('Petal length', 1.0, 6.9, 1.3)
-    petal_width = st.sidebar.slider('Petal width', 0.1, 2.5, 0.2)
-    data = {'sepal_length': sepal_length,
-            'sepal_width': sepal_width,
-            'petal_length': petal_length,
-            'petal_width': petal_width}
+    Precipitation = st.sidebar.slider('Precipitation', 0, 55.9, 27.95)
+    Tempt_min = st.sidebar.slider('Minimum Temperature', -7.1, 18.3, 5.6)
+    Tempt_max = st.sidebar.slider('Maximum Temperature', -1.6, 35.6, 17)
+    Wind = st.sidebar.slider('Wind', 0.4, 9.5, 4.95)
+    data = {'Precipitation': Precipitation,
+            'Minimum Temperature': Tempt_min,
+            'Maximum Temperature': Tempt_max,
+            'Wind': Wind}
     features = pd.DataFrame(data, index=[0])
     return features
 
@@ -28,22 +28,22 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-iris = pd.read_csv("https://raw.githubusercontent.com/richiaidil/aaa-asignment/main/IRIS.csv")
-X = iris.drop('species', axis = 1)
-Y = iris['species']
+weather = pd.read_csv("https://raw.githubusercontent.com/alfiieeee/Weather-Prediction/main/seattle-weather.csv")
+X = weather.drop('weather', axis = 1)
+Y = weather['weather']
 
-clf = RandomForestClassifier()
-clf.fit(X, Y)
+classification = RandomForestClassifier()
+classification.fit(X, Y)
 
-prediction = clf.predict(df)
-prediction_proba = clf.predict_proba(df)
+prediction = classification.predict(df)
+prediction_proba = classification.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-iris.target_names = ['setosa','versicolor','virginica']
-st.write(iris.target_names)
+weather.target_names = ['drizzle','rain','sun', 'snow', 'fog']
+st.write(weather.target_names)
 
 st.subheader('Prediction')
-#st.write(iris.target_names[prediction])
+#st.write(weather.target_names[prediction])
 st.write(prediction)
 
 st.subheader('Prediction Probability')
