@@ -24,7 +24,7 @@ def user_input_features():
             'Minimum Temperature': temp_min,
             'Maximum Temperature': temp_max,
             'Wind': wind}
-    features = pd.DataFrame(data, index=["Weather"])
+    features = pd.DataFrame(data)
     return features
 
 df = user_input_features()
