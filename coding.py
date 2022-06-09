@@ -9,7 +9,7 @@ st.write("""
 This app predicts the **Weather** type in Seattle!
 """)
 
-image= Image.open("weather-images.jpg")
+image= Image.open("weather.jpg")
 st.image(image, caption='© Google')
 
 st.sidebar.header('Please select your parameter below!')
