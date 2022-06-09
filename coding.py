@@ -40,7 +40,7 @@ prediction_proba = classification.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
 weather.target_names = ['drizzle','rain','sun', 'snow', 'fog']
-st.write(weather.target_names)
+st.table(weather.target_names)
 
 st.subheader('Prediction')
 #st.write(weather.target_names[prediction])
