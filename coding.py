@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from sklearn import datasets
 from sklearn.ensemble import RandomForestClassifier
+from PIL import Image
 
 st.write("""
 # Weather Prediction in Seattle
